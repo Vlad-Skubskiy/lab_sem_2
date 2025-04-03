@@ -15,8 +15,10 @@ class TestBinaryTree(unittest.TestCase):
     def test_unbalanced_tree(self):
         root = TreeNode(1)
         root.left = TreeNode(2)
+        root.right = TreeNode(5)
         root.left.left = TreeNode(3)
-        root.left.left.left = TreeNode(4)
+        root.left.right = TreeNode(4)
+        root.left.left.left = TreeNode(6)
 
         self.assertFalse(is_balanced_tree(root))
 
