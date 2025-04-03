@@ -14,11 +14,11 @@ def is_balanced_tree(root: TreeNode) -> int:
         right_depth = dfs(node.right)
         
         if abs(left_depth - right_depth) > 1:
-            return -1
+            return False
         
         return max(left_depth, right_depth) + 1
 
-    return dfs(root) != -1
+    return dfs(root) != False
 
 root = TreeNode(1)
 root.left = TreeNode(2)
