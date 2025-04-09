@@ -1,7 +1,7 @@
 import unittest
 from lab3 import TreeNode, is_balanced_tree
 
-class TestBinaryTree(unittest.TestCase):
+class TestBinaryTree(unittest.TestCase): 
 
     def test_balanced_tree(self):
         root = TreeNode(1)
