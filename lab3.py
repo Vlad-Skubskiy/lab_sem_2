@@ -6,7 +6,7 @@ class TreeNode:
 
 def is_balanced_tree(root: TreeNode) -> int:
     def dfs(node):
-
+ 
         if node is None:
             return 0
         
