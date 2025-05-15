@@ -20,21 +20,21 @@ def kmp_search(text: str, needle: str) -> list[int]:
     if not needle or not text:
         return []
 
-    suf_pref = find_sufix_and_prefix(needle)
+    suf_pref = find_sufix_and_prefix(part)
     result = []
 
     i = 0
     j = 0
 
     while i < len(text):
-        if text[i] == needle[j]:
+        if text[i] == part[j]:
             i += 1
             j += 1
-            if j == len(needle):
+            if j == len(part):
                 result.append(i - j)
                 j = suf_pref[j - 1]
 
-        elif i < len(text) and text[i] != needle[j]:
+        elif i < len(text) and text[i] != part[j]:
             if j > 0:
                 j = suf_pref[j - 1]
             else:
@@ -43,7 +43,7 @@ def kmp_search(text: str, needle: str) -> list[int]:
     return result
 
 text = "abc ab c abca"
-needle = "abca"
+part = "abca"
 
-positions = kmp_search(text, needle)
+positions = kmp_search(text, part)
 print(positions)
