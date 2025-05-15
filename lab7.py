@@ -27,14 +27,14 @@ def kmp_search(haystack: str, needle: str) -> list[int]:
     j = 0
 
     while i < len(text):
-        if haystack[i] == needle[j]:
+        if text[i] == needle[j]:
             i += 1
             j += 1
             if j == len(needle):
                 result.append(i - j)
                 j = suf_pref[j - 1]
 
-        elif i < len(haystack) and haystack[i] != needle[j]:
+        elif i < len(text) and text[i] != needle[j]:
             if j > 0:
                 j = suf_pref[j - 1]
             else:
