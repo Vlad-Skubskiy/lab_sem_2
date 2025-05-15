@@ -1,4 +1,4 @@
-def kmp_search(haystack: str, needle: str) -> list[int]:
+def kmp_search(text: str, needle: str) -> list[int]:
     def find_sufix_and_prefix(pattern: str) -> list[int]:
         p = [0] * len(pattern)
         length = 0
@@ -17,7 +17,7 @@ def kmp_search(haystack: str, needle: str) -> list[int]:
                     i += 1
         return p
 
-    if not needle or not haystack:
+    if not needle or not text:
         return []
 
     suf_pref = find_sufix_and_prefix(needle)
@@ -44,8 +44,6 @@ def kmp_search(haystack: str, needle: str) -> list[int]:
 
 text = "abc ab c abca"
 needle = "abca"
-
-
 
 positions = kmp_search(text, needle)
 print(positions)
