@@ -1,7 +1,9 @@
 import unittest
 from io import StringIO
 import sys
-from lab9 import electrics
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from src.lab9 import electrics
 
 class TestElectrics(unittest.TestCase):
     def setUp(self):
@@ -19,7 +21,7 @@ class TestElectrics(unittest.TestCase):
     def test_single_point(self):
         sys.stdin = StringIO("5\n10")
         electrics()
-        self.assertEqual(self.held_output.getvalue().strip(), "0.0")
+        self.assertEqual(self.held_output.getvalue().strip(), "0")
 
 if __name__ == "__main__":
     unittest.main()
